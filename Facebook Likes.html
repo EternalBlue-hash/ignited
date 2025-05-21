@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Facebook Likes | Ignite</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+  
+    body {
+      background-color: #121212;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', cursive, sans-serif;
+    }
+
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0px auto 10px;
+      flex-wrap: wrap;
+    }
+
+    .pricing-toggle button {
+      padding: 10px 20px;
+      border: none;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      border: 2px solid transparent;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pricing-toggle button i {
+      font-size: 16px;
+    }
+
+    .pricing-toggle button.active {
+      background: linear-gradient(90deg, #ff007f, #ff8400);
+      border-color: #ff8400;
+    }
+
+    .plan-section-wrapper {
+        background-color: linear-gradient(to right, #ff007f, #ff8400);
+        border-radius: 16px;
+        padding: 40px 20px;
+        margin: 50px auto;
+        max-width: 1100px;
+        box-shadow: 0 8px 30px rgba(255, 75, 75, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .plan-description {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .plan-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.853);
+    }
+
+    .plan-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .plan-card .price {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #ff8400;
+    }
+
+    .plan-card .old-price {
+      text-decoration: line-through;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .plan-card .save {
+      font-size: 13px;
+      color: #00ffb2;
+      margin-bottom: 10px;
+    }
+
+    .plan-card button {
+      background: linear-gradient(to right, #ff007f, #ff8400);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Ignite Logo" /></a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav class="nav-container">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="services-menu">
+        <a href="#">Services</a>
+        <div class="mega-menu">
+          <div class="menu-column">
+            <h4><i class="fab fa-instagram"></i> Instagram Services</h4>
+            <a href="Insta followers.html">Buy Instagram Followers</a>
+            <a href="Insta Likes.html">Buy Instagram Likes</a>
+          </div>
+          <div class="menu-column">
+            <h4><i class="fab fa-youtube"></i> YouTube Services</h4>
+            <a href="YouTube Subscribers.html">Buy YouTube Subscribers</a>
+            <a href="#">Buy YouTube Views</a>
+          </div>
+          <div class="menu-column">
+            <h4><i class="fab fa-facebook-f"></i> Facebook Services</h4>
+            <a href="Facebook Followers.html">Buy Facebook Followers</a>
+            <a href="Facebook Likes.html">Buy Facebook Likes</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="Get Started.html" class="cta-btn">Get Started</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="trusted-section" id="trusted-sec">
+    <div class="container">
+      <h2>Buy Facebook Likes</h2>
+      <p>Choose your ideal growth plan below.</p>
+    </div>
+  </section>
+ 
+  <div class="pricing-toggle">
+    <button class="active" onclick="switchPlan('real')"><i class="fas fa-fire"></i> Real Likes</button>
+    <button onclick="switchPlan('prestige')"><i class="fas fa-crown"></i> Prestige Packs</button>
+  </div>
+
+  <div class="plan-description" id="planDesc">
+    Real Facebook likes delivered instantly. Safe, secure & high-quality accounts.
+  </div>
+
+  <div class="plan-section-wrapper">
+    <div class="plans-grid" id="plansContainer">
+    </div>
+  </div>
+
+  <div class="wave-divider wave-between">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C480,100 960,0 1440,100 L1440,150 L0,150 Z" fill="#161616"/>
+    </svg>
+  </div>
+
+  <section class="services-section" id="services">
+    <h2 class="section-title reveal">  Start Your Facebook Growth Right Away with Ignite!</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>Your success is our priority. We strive to provide best-in-class service and real results.</p>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Ad-Based Growth</h3>
+        <p>Our ad-driven system helps you gain high-quality organic engagement from targeted audiences.</p>
+      </div>
+      
+      <div class="service-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Instant Delivery</h3>
+        <p>Enjoy fast delivery with secure methods that protect your account from any risk.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="color-divider red-into-black">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C360,100 1080,0 1440,100 L1440,150 L0,150 Z" fill="#121212"/>
+    </svg>
+  </div>
+
+  <section class="testimonials-section" id="testimonials">
+  <h2 class="section-title reveal">What Our Clients Say</h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+      <p class="testimonial-text">“Ignite helped me grow my Facebook from 2k to 20k in a month. Real engagement, real results!”</p>
+      <h4>- Alex M.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+      <p class="testimonial-text">“We saw instant improvement in our YouTube views and subscriber growth. Highly recommended!”</p>
+      <h4>- Sarah T.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+      <p class="testimonial-text">“Facebook reach went up 300% after using their packages. Customer support was fantastic too.”</p>
+      <h4>- Jordan R.</h4>
+    </div>
+
+  </div>
+</section>
+
+  <div class="wave-divider wave-between">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C480,100 960,0 1440,100 L1440,150 L0,150 Z" fill="#161616"/>
+    </svg>
+  </div>
+
+<section class="benefits" id="benefits">
+  <h2 class="section-title">Why Choose Ignite?</h2>
+  <p>We provide unmatched value with real results and trusted service.</p>
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i class="fas fa-users"></i>
+      <h3>100% Real Engagement</h3>
+      <p>We deliver real followers, likes, and views from genuine accounts to ensure authentic growth.</p>
+    </div>
+
+    <div class="benefit-item">
+      <i class="fas fa-bolt"></i>
+      <h3>Fast Delivery</h3>
+      <p>Your order starts processing instantly so you see results within minutes, not days.</p>
+    </div>
+
+    <div class="benefit-item">
+      <i class="fas fa-lock"></i>
+      <h3>No Password Required</h3>
+      <p>We respect your privacy. No passwords or sensitive data needed, ever.</p>
+    </div>
+
+    <div class="benefit-item">
+      <i class="fas fa-headset"></i>
+      <h3>24/7 Customer Support</h3>
+      <p>Our support team is always available to assist you, anytime, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+  <div class="color-divider red-into-black">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C360,100 1080,0 1440,100 L1440,150 L0,150 Z" fill="#121212"/>
+    </svg>
+  </div>
+
+  <section class="benefits" id="benefits" style="background-color: #121212;">
+  <h2 class="section-title">How to Buy Facebook Likes</h2>
+  <p>Follow the steps shown below to complete your purchase quickly with Ignite!</p>
+
+  <div class="benefits-grid">
+    <div class="benefit-item"><br>
+      <i class="fas fa-box-open"></i>
+      <h3>Choose a Package</h3>
+      <p>Select a follower package that fits your goals.</p>
+    </div>
+
+    <div class="benefit-item"><br>
+      <i class="fas fa-user-circle"></i>
+      <h3>Enter your Post</h3>
+      <p>Provide your Facebook Post.</p>
+    </div>
+
+    <div class="benefit-item"><br>
+      <i class="fas fa-credit-card"></i>      
+      <h3>Complete Payment</h3>
+      <p>Use our secure payment gateway to pay.</p>
+    </div>
+
+    <div class="benefit-item"><br>
+      <i class="fas fa-check-circle"></i>
+      <h3>That’s All!</h3>
+      <p>Your likes will start arriving instantly!</p>
+    </div>
+  </div><br><br><br>
+  <a href="Facebook Likes.html" class="btn primary cta-btn-center"> Place Your Order Now!</a>
+</section>
+
+  <div class="wave-divider wave-between">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C480,100 960,0 1440,100 L1440,150 L0,150 Z" fill="#161616"/>
+    </svg>
+  </div>
+
+  <section class="faq-section" id="faq">
+  <h2 class="section-title reveal">Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question">Do I need to share my password?</button>
+      <div class="faq-answer">
+        <p>No, we never ask for your password. All we need is your username or post link.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How fast is delivery?</button>
+      <div class="faq-answer">
+        <p>Most orders start within minutes after purchase and complete within hours.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Are the followers/likes real?</button>
+      <div class="faq-answer">
+        <p>Yes, we provide high-quality, authentic engagement to ensure safety and credibility.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What if I have an issue with my order?</button>
+      <div class="faq-answer">
+        <p>Our 24/7 customer support team is always here to help. Just reach out via our contact page.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <div class="color-divider red-into-black">
+    <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,0 C360,100 1080,0 1440,100 L1440,150 L0,150 Z" fill="#121212"/>
+    </svg>
+  </div>
+
+  <footer class="ignite-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <img src="images/logo.png" alt="Ignite Logo" class="footer-logo" />
+      <p>
+        Ignite helps creators and brands grow faster on social media through powerful, reliable engagement services. Experience real growth that drives results.
+      </p>
+      <div class="trust-badge">
+        <span>Trustindex rating</span><br />
+        <strong>5.0</strong>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>NEWSLETTER</h4>
+      <p>Subscribe to get the latest news and deals from Ignite!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Services</h4>
+        <a href="Insta followers.html">Buy Instagram Followers</a>
+        <a href="Insta Likes.html">Buy Instagram Likes</a>
+        <a href="YouTube Subscribers.html">Buy YouTube Subscribers</a>
+        <a href="#">Buy YouTube Views</a>
+        <a href="Facebook Followers.html">Buy Facebook Followers</a>
+        <a href="#">Buy Facebook Likes</a>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+      <div class="footer-column">
+        <h4>Useful</h4>
+        <a href="#">FAQ</a>
+        <a href="#">contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="secure-checkout-icon">
+      <i class="fas fa-shield-alt"></i> 
+      <span>Secure Checkout</span>
+    </div>
+
+    <div class="payment-methods">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-amex"></i>
+      <i class="fab fa-bitcoin"></i>
+    </div>
+    <p>&copy; 2025 Ignite. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle('open');
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('open');
+        }
+      });
+    });
+  });
+</script>
+
+  <script>
+
+    function toggleMenu() {
+      const navContainer = document.querySelector('.nav-container');
+      navContainer.classList.toggle('show');
+    }
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+
+    function scrollToSection() {
+      const target = document.querySelector("#trusted-sec");
+      const offset = -80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = target.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition + offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+    const servicesMenu = document.querySelector('.services-menu');
+    const megaMenu = document.querySelector('.mega-menu');
+
+    servicesMenu.addEventListener('mouseenter', () => {
+      servicesMenu.classList.add('active');
+    });
+
+    servicesMenu.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!servicesMenu.matches(':hover') && !megaMenu.matches(':hover')) {
+          servicesMenu.classList.remove('active');
+        }
+      }, 200);
+    });
+
+    megaMenu.addEventListener('mouseleave', () => {
+      servicesMenu.classList.remove('active');
+    });
+  });
+    const planData = {
+      real: {
+        desc: "Real Facebook likes delivered instantly. Safe, secure & high-quality accounts.",
+        plans: [
+          { amount: '100', price: 2.99, original: 4.99 },
+          { amount: '250', price: 5.95, original: 9.88 },
+          { amount: '500', price: 9.99, original: 19.99 },
+          { amount: '1000', price: 14.99, original: 29.99 }
+        ]
+      },
+      prestige: {
+        desc: "US-targeted prestige likes with VIP support and gradual delivery.",
+        plans: [
+          { amount: '100', price: 8.95, original: 19.99 },
+          { amount: '1000', price: 24.99, original: 49.99 },
+          { amount: '5000', price: 74.99, original: 129.99 },
+          { amount: '10000', price: 129.99, original: 199.99 }
+        ]
+      }
+    };
+
+    function switchPlan(type) {
+      document.querySelectorAll('.pricing-toggle button').forEach(btn => btn.classList.remove('active'));
+      const index = type === 'real' ? 0 : type === 'prestige' ? 1 : 2;
+      document.querySelectorAll('.pricing-toggle button')[index].classList.add('active');
+      document.getElementById('planDesc').textContent = planData[type].desc;
+      renderPlans(planData[type].plans);
+    }
+
+    function renderPlans(plans) {
+      const container = document.getElementById('plansContainer');
+      container.innerHTML = plans.map(plan => {
+        const save = (plan.original - plan.price).toFixed(2);
+        return `
+          <div class="plan-card">
+            <h3>${plan.amount} Likes</h3>
+            <div class="price">$${plan.price}</div>
+            <div class="old-price">$${plan.original}</div>
+            <div class="save">You Save $${save}</div>
+            <button>Buy Now</button>
+          </div>`;
+      }).join('');
+    }
+
+    // Load default on start
+    switchPlan('real');
+
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

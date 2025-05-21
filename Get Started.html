@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ignite - Login & Signup</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, #0e0e0e, #1f1f1f);
+      padding: 20px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 180px;
+      mix-blend-mode: lighten;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow( 0 -4px 8px rgba(255, 0, 0, 0.2));
+    }
+
+    .wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px 25px;
+      border-radius: 20px;
+      max-width: 420px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      border: 1px solid #ffffff15;
+      box-shadow: 0 -4px 8px rgba(255, 0, 0, 0.2); 
+    }
+
+    .form-toggle {
+      display: flex;
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 0, 0, 0.2);
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      background: transparent;
+      color: #ccc;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .toggle-btn.active {
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: #fff;
+    }
+
+    .form-box {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-box.active {
+      display: flex;
+    }
+
+    .form-box input {
+      padding: 12px 15px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #2a2a2a;
+      color: #fff;
+      outline: none;
+    }
+
+    .form-box input::placeholder {
+      color: #aaa;
+    }
+
+    .forgot-password {
+      font-size: 13px;
+      color: #ff416c;
+      text-align: right;
+      text-decoration: none;
+    }
+
+    .submit-btn {
+      padding: 12px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 -4px 8px rgba(255, 0, 0, 0.2); 
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.02);
+    }
+
+    .switch-form {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .switch-form a {
+      color: #ff8400;
+      text-decoration: none;
+    }
+
+    @media (max-width: 450px) {
+      .wrapper {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Ignite Logo" /></a>
+    </div>
+
+    <div class="form-toggle">
+      <button id="loginBtn" class="toggle-btn active">Login</button>
+      <button id="signupBtn" class="toggle-btn">Signup</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form-box active">
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <a href="#" class="forgot-password">Forgot password?</a>
+      <button type="submit" class="submit-btn">Login</button>
+      <p class="switch-form">Not a member? <a href="#" id="toSignup">Signup now</a></p>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" class="form-box">
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <input type="password" placeholder="Confirm Password" required />
+      <button type="submit" class="submit-btn">Signup</button>
+      <p class="switch-form">Already a member? <a href="#" id="toLogin">Login now</a></p>
+    </form>
+  </div>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    loginBtn.addEventListener('click', () => {
+      loginBtn.classList.add('active');
+      signupBtn.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    });
+
+    signupBtn.addEventListener('click', () => {
+      signupBtn.classList.add('active');
+      loginBtn.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+
+    document.getElementById('toSignup').onclick = (e) => {
+      e.preventDefault();
+      signupBtn.click();
+    };
+
+    document.getElementById('toLogin').onclick = (e) => {
+      e.preventDefault();
+      loginBtn.click();
+    };
+  </script>
+</body>
+</html>
